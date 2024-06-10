@@ -1,10 +1,12 @@
 import { Router } from "express";
-import { getUserById, getUsers } from "../handlers/users";
+import { getUserByIdHandler, getUsersHandler, registerUserHandler, loginUserHandler } from "../handlers/users";
 
 const router = Router();
 
 // Prefix "/api/users"
-router.get("/", getUsers);
-router.get("/:id", getUserById);
+router.get("/", getUsersHandler);
+router.get("/:id", getUserByIdHandler);
+router.post('/', registerUserHandler);
+router.post('/login', loginUserHandler);
 
 export default router;

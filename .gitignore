@@ -12,6 +12,7 @@ Thumbs.db
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+*.http
 
 # Next.js
 .next/
