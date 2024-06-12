@@ -1,10 +1,12 @@
 import dotenv from 'dotenv';
 import express, { NextFunction, Request, Response } from 'express';
-import usersRouter from './routes/users';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
+
+import assignmentRouter from './routes/assignments';
+import usersRouter from './routes/users';
 import { isAuthenticated } from './middlewares';
 
 dotenv.config();
@@ -20,6 +22,7 @@ app.use(cors({
 
 // Prefix routes:
 app.use('/api/users', usersRouter);
+app.use('/api/assignments', assignmentRouter);
 
 const PORT = 3000;
 

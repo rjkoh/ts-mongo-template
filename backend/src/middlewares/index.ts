@@ -16,10 +16,13 @@ export const isAuthenticated = async (request: Request, response: Response, next
             return response.sendStatus(403);
         }
         
+        // Attach user id to request:
+        request.userId = existingUser._id.toString();
+
         return next();
     } catch (error) {
         console.log("Something went wrong with authenticating (middleware)");
         console.log(error);
-        return response.sendStatus;
+        return response.sendStatus(400);
     }
 }
