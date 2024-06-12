@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const AuthenticationSchema = new mongoose.Schema({
     password: { type: String, required: true, select: false },
     salt: { type: String, required: true, select: false },
-    sessionToken: { type: String, required: true, select: false }
+    sessionToken: { type: String, select: false }
 });
 
 

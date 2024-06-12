@@ -13,17 +13,17 @@ const generateHash = (salt: string, password: string) => {
 
 
 // Routes Methods:
-// "/api/users/"
+// GET "/api/users"
 export function getUsersHandler(request: Request, response: Response) {
     response.send([]);
 }
 
-// "/api/users/:id"
+// GET "/api/users/:id"
 export function getUserByIdHandler(request: Request, response: Response) {
     response.send({});
 }
 
-// "/api/users"
+// POST "/api/users"
 export async function registerUserHandler(request: Request, response: Response) {
     try {
         const { email, username, password } = request.body;
@@ -62,7 +62,7 @@ export async function registerUserHandler(request: Request, response: Response) 
     }
 }
 
-// "/api/users/login"
+// POST "/api/users/login"
 export async function loginUserHandler(request: Request, response: Response) {
     try {
         const { email, password } = request.body;

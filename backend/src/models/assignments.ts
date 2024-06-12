@@ -18,7 +18,7 @@ const AssignmentSchema = new mongoose.Schema({
 export const AssignmentModel = mongoose.model('Assignment', AssignmentSchema);
 
 // Helper functions:
-export const getAssignments = () => AssignmentModel.find();
+export const getAssignmentsForUser = (userId: string) => AssignmentModel.find({ userId: userId });
 export const getAssignmentById = (id: string) => AssignmentModel.findById(id);
 export const createAssignment = (values: Record<string, any>) => new AssignmentModel(values).save().then((assignment) => assignment.toObject());
 export const deleteAssignmentById = (id: string) => AssignmentModel.findOneAndDelete({ _id: id });
