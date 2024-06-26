@@ -6,6 +6,7 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 
 import assignmentRouter from './routes/assignments';
+import generationRouter from './routes/generation';
 import usersRouter from './routes/users';
 import { isAuthenticated } from './middlewares';
 
@@ -23,6 +24,7 @@ app.use(cors({
 // Prefix routes:
 app.use('/api/users', usersRouter);
 app.use('/api/assignments', assignmentRouter);
+app.use('/api/generation', generationRouter);
 
 const PORT = 3000;
 
